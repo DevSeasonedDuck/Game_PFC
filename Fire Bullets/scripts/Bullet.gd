@@ -10,7 +10,7 @@ class_name Bullet
 @export var delete_after : int = 30 
 
 ## speed of the bullet in pixels per second
-var speed : float
+var speed : float=2000.0
 
 ## angle of the bullet when fired
 var angle : float

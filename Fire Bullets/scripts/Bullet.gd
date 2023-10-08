@@ -13,7 +13,7 @@ class_name Bullet
 var speed : float=2000.0
 
 ## angle of the bullet when fired
-var angle : float
+var angle : float = 0.0
 
 ## used to track time for [delete_after], best not to change it to avoid errors
 var time = 0

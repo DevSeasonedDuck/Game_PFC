@@ -7,22 +7,17 @@
 size = Vector2(62, 61)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(0, -2)
 script = ExtResource("1_mgqbo")
 metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_ow88a")
-flip_h = true
-
-[node name="Node2D" type="Marker2D" parent="."]
-position = Vector2(40, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_5h4wj")
 
 [node name="CooldownBullet" type="Timer" parent="."]
 wait_time = 0.4
 one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ow88a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_5h4wj")

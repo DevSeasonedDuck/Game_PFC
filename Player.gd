@@ -10,9 +10,9 @@ var JUMP_COUNTER=2
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")+100
 @onready var cooldownBullet=$CooldownBullet
 
+
 func _physics_process(delta):
 	
-	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		# If defined for when the player is on air whithout jumping previously, not keeping two jumps on air and instead just be able jump once
@@ -20,7 +20,11 @@ func _physics_process(delta):
 			JUMP_COUNTER=JUMP_COUNTER-1;
 	else:
 		JUMP_COUNTER=2
-		
+	
+	if Input.is_action_pressed("go_right") and $Sprite2D.flip_h==true:
+		$Sprite2D.flip_h=false
+	if Input.is_action_pressed("go_left") and $Sprite2D.flip_h==false:
+		$Sprite2D.flip_h=true
 	# Get the input direction and handle the movement/deceleration.
 	var directionH = Input.get_axis("go_left", "go_right")
 	if directionH:
@@ -28,7 +32,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-		
+	
 	# Jump.
 	if Input.is_action_just_pressed("jump") and JUMP_COUNTER>0:
 		if Input.is_action_pressed("sprint"):
@@ -61,6 +65,11 @@ func _physics_process(delta):
 func shoot():
 	var _Bullet=bulletPath.instantiate()
 	add_child(_Bullet)
-	_Bullet.global_position=self.position+Vector2(40,0)
+	if $Sprite2D.flip_h==true:
+		_Bullet.global_position=self.position+Vector2(-40,0)
+		_Bullet.angle=180.0
+	if $Sprite2D.flip_h==false:
+		_Bullet.global_position=self.position+Vector2(40,0)
+		_Bullet.angle=0.0
 	cooldownBullet.start()
 	InputHelper.rumble_small()

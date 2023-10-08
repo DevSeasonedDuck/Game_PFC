@@ -34,3 +34,5 @@ func _physics_process(delta):
 
 func on_screen_exited():
 	queue_free()
+
+

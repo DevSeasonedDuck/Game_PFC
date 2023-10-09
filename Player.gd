@@ -60,7 +60,6 @@ func _physics_process(delta):
 		
 	move_and_slide()
 	
-	
 # Shooting bullets
 func shoot():
 	var _Bullet=bulletPath.instantiate()
@@ -73,3 +72,6 @@ func shoot():
 		_Bullet.angle=0.0
 	cooldownBullet.start()
 	InputHelper.rumble_small()
+	
+
+	

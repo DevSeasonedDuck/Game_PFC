@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckpjhbq06obd6"]
+[gd_scene load_steps=8 format=3 uid="uid://ckpjhbq06obd6"]
 
 [ext_resource type="PackedScene" uid="uid://omsytrbdnvxc" path="res://player.tscn" id="1_iwc1p"]
 [ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="2_6tuwk"]
 [ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="2_bwcaj"]
+[ext_resource type="Script" path="res://addons/parallax_node/parallax_node.gd" id="4_homrs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m1myy"]
 
@@ -287,3 +288,6 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
+
+[node name="ParallaxNode" type="Node2D" parent="."]
+script = ExtResource("4_homrs")

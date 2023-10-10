@@ -1,14 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckpjhbq06obd6"]
+[gd_scene load_steps=6 format=3 uid="uid://b2x2saagsuboq"]
 
-[ext_resource type="PackedScene" uid="uid://omsytrbdnvxc" path="res://player.tscn" id="1_iwc1p"]
-[ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="2_6tuwk"]
-[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="2_bwcaj"]
-[ext_resource type="Script" path="res://addons/parallax_node/parallax_node.gd" id="4_homrs"]
+[ext_resource type="PackedScene" uid="uid://d6akd4ygw8k4" path="res://GDScenes/player.tscn" id="2_t6rd8"]
+[ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="3_084je"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m1myy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cla1v"]
-texture = ExtResource("2_6tuwk")
+texture = ExtResource("3_084je")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -268,13 +266,8 @@ sources/1 = SubResource("TileSetAtlasSource_cla1v")
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_iwc1p")]
-position = Vector2(314, 206)
-
-[node name="Camera2DPlus" type="Camera2D" parent="Player"]
-position_smoothing_enabled = true
-script = ExtResource("2_bwcaj")
-NODE_TO_FOLLOW_PATH = NodePath("..")
+[node name="Player" parent="." instance=ExtResource("2_t6rd8")]
+position = Vector2(290, 111)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(11, 64)
@@ -288,6 +281,3 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
-
-[node name="ParallaxNode" type="Node2D" parent="."]
-script = ExtResource("4_homrs")

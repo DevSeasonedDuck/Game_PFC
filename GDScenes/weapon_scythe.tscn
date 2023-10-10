@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://nssjcvlran3y"]
+
+[ext_resource type="Script" path="res://GDScenes/weapon_scythe.gd" id="1_n1qhj"]
+[ext_resource type="Texture2D" uid="uid://gobjg0a1vham" path="res://Assets/Spritesheets/Player/Attacks/Scythe.png" id="1_wol8y"]
+[ext_resource type="Script" path="res://GDScripts/Hitbox.gd" id="2_jwtgg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ri3aq"]
+radius = 13.024
+height = 35.9841
+
+[sub_resource type="Animation" id="Animation_r2n13"]
+resource_name = "slash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.46755, -0.194183, 1.01261]
+}
+
+[sub_resource type="Animation" id="Animation_fcabm"]
+resource_name = "slash_round_air"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.00373185, 0.773101, 2.32872, 3.91302, 5.49282]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkuv4"]
+_data = {
+"slashGround": SubResource("Animation_r2n13"),
+"slash_round_air": SubResource("Animation_fcabm")
+}
+
+[node name="WeaponScythe" type="Node2D"]
+rotation = 1.01261
+scale = Vector2(2, 2)
+script = ExtResource("1_n1qhj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(5, -21)
+rotation = -0.00147056
+texture = ExtResource("1_wol8y")
+
+[node name="Hitbox" type="Area2D" parent="Sprite2D"]
+script = ExtResource("2_jwtgg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+position = Vector2(8, -11)
+rotation = 1.60051
+shape = SubResource("CapsuleShape2D_ri3aq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_qkuv4")
+}
+
+[connection signal="animation_changed" from="AnimationPlayer" to="." method="_on_animation_player_animation_changed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

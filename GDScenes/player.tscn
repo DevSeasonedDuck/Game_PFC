@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://omsytrbdnvxc"]
+[gd_scene load_steps=5 format=3 uid="uid://d6akd4ygw8k4"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_mgqbo"]
+[ext_resource type="Script" path="res://GDScripts/Player.gd" id="1_66r3o"]
 [ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="2_ow88a"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="3_jqvjm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5h4wj"]
 size = Vector2(62, 61)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-3, -2)
-script = ExtResource("1_mgqbo")
+script = ExtResource("1_66r3o")
 metadata/_edit_group_ = true
 
 [node name="CooldownBullet" type="Timer" parent="."]
@@ -22,3 +23,12 @@ texture = ExtResource("2_ow88a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_5h4wj")
+
+[node name="Camera2DPlus" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_left_margin = 0.12
+script = ExtResource("3_jqvjm")
+NODE_TO_FOLLOW_PATH = NodePath("..")
+
+[node name="CooldownScythe" type="Timer" parent="."]

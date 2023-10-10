@@ -4,11 +4,14 @@ const NORMAL_SPEED=400.0
 var SPEED = NORMAL_SPEED
 const JUMP_VELOCITY = -450.0
 #Preload for the "Bullet" scene. Required to instance bullets.
-const bulletPath = preload("res://bullet.tscn")
+const bulletPath = preload("res://GDScenes/bullet.tscn")
+const scythePath = preload("res://GDScenes/weapon_scythe.tscn")
 var JUMP_COUNTER=2 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")+100
+var canMelee : bool = true
 @onready var cooldownBullet=$CooldownBullet
+@onready var cooldownScythe=$CooldownScythe
 
 
 func _physics_process(delta):
@@ -57,6 +60,8 @@ func _physics_process(delta):
 	#Invoke the shoot function
 	if Input.is_action_pressed("shoot") and cooldownBullet.is_stopped():
 		shoot()
+	if Input.is_action_just_pressed("melee_attack") and is_on_floor() and canMelee==true:
+		melee_attack(canMelee)
 		
 	move_and_slide()
 	
@@ -74,6 +79,11 @@ func shoot():
 	$Camera2DPlus.add_shake(1.5) # Adds a little shake when bullet is fired
 	InputHelper.rumble_small()
 	
-	
-
+func melee_attack(canMelee):
+	canMelee=self.canMelee
+	var _Scythe = scythePath.instantiate()
+	add_child(_Scythe)
+	_Scythe.global_position=self.position
+	cooldownScythe.start()
+	canMelee=true
 	

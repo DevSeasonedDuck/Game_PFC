@@ -71,7 +71,9 @@ func shoot():
 		_Bullet.global_position=self.position+Vector2(40,0)
 		_Bullet.angle=0.0
 	cooldownBullet.start()
+	$Camera2DPlus.add_shake(1.5) # Adds a little shake when bullet is fired
 	InputHelper.rumble_small()
+	
 	
 
 	

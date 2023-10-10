@@ -24,6 +24,7 @@ func _ready():
 		add_child(screen_checker)
 		screen_checker.connect("screen_exited()",on_screen_exited)
 
+
 func _physics_process(delta):
 	rotation_degrees = angle
 	position += (Vector2.from_angle(rotation) * speed) * delta
@@ -32,7 +33,10 @@ func _physics_process(delta):
 		if time >= delete_after:
 			queue_free()
 
+# Erase the Bullet instance when bullet exited from screen
 func on_screen_exited():
 	queue_free()
 
-
+# Erase Bullet instance when bullet enters on a body
+func _on_body_entered(body):
+	queue_free()

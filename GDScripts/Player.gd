@@ -60,8 +60,11 @@ func _physics_process(delta):
 	#Invoke the shoot function
 	if Input.is_action_pressed("shoot") and cooldownBullet.is_stopped():
 		shoot()
-	if Input.is_action_just_pressed("melee_attack") and is_on_floor() and canMelee==true:
-		melee_attack(canMelee)
+	if Input.is_action_just_pressed("melee_attack") and canMelee==true:
+		if is_on_floor():
+			melee_attack(true)
+		if !is_on_floor():
+			melee_attack(false)
 		
 	move_and_slide()
 	
@@ -78,12 +81,16 @@ func shoot():
 	cooldownBullet.start()
 	$Camera2DPlus.add_shake(1.5) # Adds a little shake when bullet is fired
 	InputHelper.rumble_small()
-	
-func melee_attack(canMelee):
-	canMelee=self.canMelee
+
+# Melee attack
+func melee_attack(onGround):
 	var _Scythe = scythePath.instantiate()
 	add_child(_Scythe)
 	_Scythe.global_position=self.position
+	_Scythe._animations(onGround)
 	cooldownScythe.start()
+	canMelee=false
+
+
+func _on_cooldown_scythe_timeout():
 	canMelee=true
-	

@@ -45,7 +45,7 @@ _data = {
 }
 
 [node name="WeaponScythe" type="Node2D"]
-rotation = 1.01261
+rotation = -0.46755
 scale = Vector2(2, 2)
 script = ExtResource("1_n1qhj")
 
@@ -69,5 +69,4 @@ libraries = {
 "": SubResource("AnimationLibrary_qkuv4")
 }
 
-[connection signal="animation_changed" from="AnimationPlayer" to="." method="_on_animation_player_animation_changed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

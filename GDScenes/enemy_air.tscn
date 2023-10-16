@@ -1,16 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddhbrh45sg158"]
+[gd_scene load_steps=7 format=3 uid="uid://ddhbrh45sg158"]
 
 [ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="1_0ubys"]
 [ext_resource type="Script" path="res://GDScripts/enemy_air.gd" id="1_cd8vw"]
+[ext_resource type="Script" path="res://GDScripts/Hitbox.gd" id="3_xq2tr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ho1s7"]
 size = Vector2(120, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qmkt"]
+size = Vector2(130, 128)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hnltq"]
 radius = 250.008
 
 [node name="EnemyAir" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_cd8vw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -21,12 +27,20 @@ texture = ExtResource("1_0ubys")
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_ho1s7")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("3_xq2tr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_7qmkt")
+
+[node name="DetectionRange" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRange"]
 position = Vector2(2, 2)
 shape = SubResource("CircleShape2D_hnltq")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="area_entered" from="DetectionRange" to="." method="_on_area_2d_area_entered"]

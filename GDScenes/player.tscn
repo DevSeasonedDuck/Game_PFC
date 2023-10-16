@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d6akd4ygw8k4"]
+[gd_scene load_steps=6 format=3 uid="uid://d6akd4ygw8k4"]
 
 [ext_resource type="Script" path="res://GDScripts/Player.gd" id="1_66r3o"]
 [ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="2_ow88a"]
@@ -7,8 +7,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5h4wj"]
 size = Vector2(62, 61)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jsh6"]
+size = Vector2(62, 61)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(-3, -2)
+collision_layer = 5
 script = ExtResource("1_66r3o")
 metadata/_edit_group_ = true
 
@@ -33,5 +37,13 @@ NODE_TO_FOLLOW_PATH = NodePath("..")
 
 [node name="CooldownScythe" type="Timer" parent="."]
 wait_time = 0.6
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_8jsh6")
 
 [connection signal="timeout" from="CooldownScythe" to="." method="_on_cooldown_scythe_timeout"]

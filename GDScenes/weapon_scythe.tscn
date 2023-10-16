@@ -44,7 +44,7 @@ _data = {
 "slash_round_air": SubResource("Animation_fcabm")
 }
 
-[node name="WeaponScythe" type="Node2D"]
+[node name="WeaponScythe" type="Node2D" groups=["PlayerAttacks"]]
 rotation = -0.46755
 scale = Vector2(2, 2)
 script = ExtResource("1_n1qhj")
@@ -55,7 +55,9 @@ position = Vector2(5, -21)
 rotation = -0.00147056
 texture = ExtResource("1_wol8y")
 
-[node name="Hitbox" type="Area2D" parent="Sprite2D"]
+[node name="Hitbox" type="Area2D" parent="Sprite2D" groups=["PlayerAttacks"]]
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("2_jwtgg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]

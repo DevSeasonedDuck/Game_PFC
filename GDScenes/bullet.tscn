@@ -6,11 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmbgj"]
 size = Vector2(120, 120)
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" groups=["PlayerAttacks"]]
 light_mask = 3
 visibility_layer = 2
 scale = Vector2(0.1, 0.1)
-collision_layer = 3
+collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_cr8qy")
 

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddhbrh45sg158"]
+
+[ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="1_0ubys"]
+[ext_resource type="Script" path="res://GDScripts/enemy_air.gd" id="1_cd8vw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ho1s7"]
+size = Vector2(120, 120)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hnltq"]
+radius = 250.008
+
+[node name="EnemyAir" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_cd8vw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_0ubys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ho1s7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 2)
+shape = SubResource("CircleShape2D_hnltq")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

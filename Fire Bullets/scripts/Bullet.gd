@@ -38,5 +38,5 @@ func on_screen_exited():
 	queue_free()
 
 # Erase Bullet instance when bullet enters on a body
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	queue_free()

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 const NORMAL_SPEED=400.0
 var SPEED = NORMAL_SPEED
 const JUMP_VELOCITY = -450.0

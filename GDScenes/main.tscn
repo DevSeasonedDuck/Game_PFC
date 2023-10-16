@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2x2saagsuboq"]
+[gd_scene load_steps=7 format=3 uid="uid://b2x2saagsuboq"]
 
 [ext_resource type="PackedScene" uid="uid://d6akd4ygw8k4" path="res://GDScenes/player.tscn" id="2_t6rd8"]
 [ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="3_084je"]
+[ext_resource type="PackedScene" uid="uid://ddhbrh45sg158" path="res://GDScenes/enemy_air.tscn" id="3_ngh35"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m1myy"]
 
@@ -281,3 +282,6 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
+
+[node name="EnemyAir" parent="." instance=ExtResource("3_ngh35")]
+position = Vector2(1018, 67)

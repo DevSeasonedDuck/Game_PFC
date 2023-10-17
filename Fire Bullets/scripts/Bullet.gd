@@ -33,7 +33,7 @@ func _physics_process(delta):
 		if time >= delete_after:
 			queue_free()
 
-# Erase the Bullet instance when bullet exited from screen
+# Erase Bullet instance when bullet exited from screen
 func on_screen_exited():
 	queue_free()
 

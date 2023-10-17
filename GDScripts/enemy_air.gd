@@ -18,7 +18,6 @@ func _physics_process(_delta):
 			move_and_slide()
 
 
-
 func _on_area_2d_area_entered(_area):
 	chase=true
 

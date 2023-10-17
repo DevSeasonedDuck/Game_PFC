@@ -9,9 +9,5 @@ func _animations(onGround):
 		$AnimationPlayer.play("slash_round_air")
 
 
-
-
-
-
 func _on_animation_player_animation_finished(_anim_name):
 	queue_free()

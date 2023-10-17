@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2x2saagsuboq"]
+[gd_scene load_steps=8 format=3 uid="uid://b2x2saagsuboq"]
 
 [ext_resource type="PackedScene" uid="uid://d6akd4ygw8k4" path="res://GDScenes/player.tscn" id="2_t6rd8"]
 [ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="3_084je"]
 [ext_resource type="PackedScene" uid="uid://ddhbrh45sg158" path="res://GDScenes/enemy_air.tscn" id="3_ngh35"]
+[ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="4_opt54"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m1myy"]
 
@@ -268,7 +269,7 @@ sources/1 = SubResource("TileSetAtlasSource_cla1v")
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_t6rd8")]
-position = Vector2(290, 111)
+position = Vector2(404, 370)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(11, 64)
@@ -284,4 +285,19 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 
 [node name="EnemyAir" parent="." instance=ExtResource("3_ngh35")]
-position = Vector2(1018, 67)
+position = Vector2(1036, 59)
+
+[node name="EnemyAir2" parent="." instance=ExtResource("3_ngh35")]
+position = Vector2(742, 47)
+
+[node name="EnemyAir3" parent="." instance=ExtResource("3_ngh35")]
+position = Vector2(437, 45)
+
+[node name="Camera2DPlus" type="Camera2D" parent="."]
+position = Vector2(406, 366)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("4_opt54")
+NODE_TO_FOLLOW_PATH = NodePath("../Player")

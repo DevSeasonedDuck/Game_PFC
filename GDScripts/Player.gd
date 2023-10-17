@@ -34,6 +34,7 @@ func _physics_process(delta):
 	var directionH = Input.get_axis("go_left", "go_right")
 	if directionH:
 		velocity.x = directionH * SPEED
+		$PlayerAnim.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		

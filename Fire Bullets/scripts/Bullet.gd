@@ -40,3 +40,8 @@ func on_screen_exited():
 # Erase Bullet instance when bullet enters on a body
 func _on_body_entered(_body):
 	queue_free()
+
+
+func _on_area_entered(area):
+	if area.is_in_group("EnemiesCollisions"):
+		queue_free()

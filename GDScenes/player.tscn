@@ -70,11 +70,11 @@ shape = SubResource("RectangleShape2D_5h4wj")
 [node name="CooldownScythe" type="Timer" parent="."]
 wait_time = 0.6
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="PlayerArea" type="Area2D" parent="." groups=["PlayerArea"]]
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_8jsh6")
 

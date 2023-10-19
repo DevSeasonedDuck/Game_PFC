@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game_PFC"
-run/main_scene="res://GDScenes/main.tscn"
+run/main_scene="res://GDScenes/TestRoom.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"

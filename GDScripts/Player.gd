@@ -37,6 +37,7 @@ func _physics_process(delta):
 		$PlayerAnim.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		$PlayerAnim.play("walk")
 		
 	
 	# Jump.

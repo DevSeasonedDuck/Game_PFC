@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d6akd4ygw8k4"]
+[gd_scene load_steps=9 format=3 uid="uid://d6akd4ygw8k4"]
 
 [ext_resource type="Script" path="res://GDScripts/Player.gd" id="1_66r3o"]
 [ext_resource type="Texture2D" uid="uid://lgrngc457m52" path="res://Assets/Spritesheets/Player/Placeholder/CharacterPlaceholder.png" id="2_nub12"]
+[ext_resource type="PackedScene" uid="uid://putl3xjsctax" path="res://GDScenes/life_bar_scene.tscn" id="3_uixpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5h4wj"]
 size = Vector2(62, 63)
@@ -83,4 +84,7 @@ libraries = {
 "": SubResource("AnimationLibrary_648sc")
 }
 
+[node name="LifeBarScene" parent="." instance=ExtResource("3_uixpp")]
+
 [connection signal="timeout" from="CooldownScythe" to="." method="_on_cooldown_scythe_timeout"]
+[connection signal="area_entered" from="PlayerArea" to="." method="_on_player_area_area_entered"]

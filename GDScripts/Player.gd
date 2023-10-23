@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 class_name Player
+signal healthChanged
 
 const NORMAL_SPEED=400.0
 var SPEED = NORMAL_SPEED
@@ -14,6 +15,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")+100
 var canMelee : bool = true
 @onready var cooldownBullet=$CooldownBullet
 @onready var cooldownScythe=$CooldownScythe
+
+@export var maxHealth = 100
+@export var currentHealth = maxHealth
 
 
 func _physics_process(delta):
@@ -94,6 +98,10 @@ func melee_attack(onGround):
 	cooldownScythe.start()
 	canMelee=false
 
-
 func _on_cooldown_scythe_timeout():
 	canMelee=true
+
+func _on_player_area_area_entered(area):
+	if area.is_in_group("EnemiesCollisions"):
+		currentHealth-=10
+		healthChanged.emit()

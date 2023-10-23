@@ -16,7 +16,7 @@ var canMelee : bool = true
 @onready var cooldownBullet=$CooldownBullet
 @onready var cooldownScythe=$CooldownScythe
 
-@export var maxHealth = 100
+@export var maxHealth = 20
 @export var currentHealth = maxHealth
 
 
@@ -105,3 +105,5 @@ func _on_player_area_area_entered(area):
 	if area.is_in_group("EnemiesCollisions"):
 		currentHealth-=10
 		healthChanged.emit()
+		if currentHealth==0:
+			get_tree().reload_current_scene()

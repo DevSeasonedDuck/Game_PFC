@@ -82,7 +82,8 @@ melee_attack={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=3
+textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_repeat=1
 textures/default_filters/anisotropic_filtering_level=0
 textures/default_filters/texture_mipmap_bias=1.0
 textures/decals/filter=0

@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://GDScripts/Hitbox.gd" id="3_xq2tr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qmkt"]
-size = Vector2(120, 120)
+size = Vector2(124, 114)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_23ht1"]
 radius = 40.0
@@ -32,6 +32,7 @@ collision_mask = 3
 script = ExtResource("3_xq2tr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_7qmkt")
 
 [node name="DetectionRange" type="Area2D" parent="."]

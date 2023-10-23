@@ -405,7 +405,10 @@ sources/2 = SubResource("TileSetAtlasSource_c2wvp")
 [node name="TestRoom" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_44lqo")]
-position = Vector2(272, 338)
+position = Vector2(273, 341)
+
+[node name="CollisionShape2D" parent="Player" index="2"]
+position = Vector2(0, -1)
 
 [node name="Camera2DPlus" type="Camera2D" parent="."]
 position = Vector2(406, 366)
@@ -436,6 +439,42 @@ position = Vector2(794, 16)
 
 [node name="EnemyAir2" parent="." instance=ExtResource("4_2axqc")]
 position = Vector2(459, 14)
+
+[node name="EnemyAir3" parent="." instance=ExtResource("4_2axqc")]
+position = Vector2(1829, -54)
+
+[node name="EnemyAir4" parent="." instance=ExtResource("4_2axqc")]
+position = Vector2(273, 843)
+rotation = -1.57079
+
+[node name="EnemyAir5" parent="." instance=ExtResource("4_2axqc")]
+position = Vector2(1430, 1029)
+rotation = 3.14159
+
+[node name="EnemyAir6" parent="." instance=ExtResource("4_2axqc")]
+position = Vector2(2797, 133)
+
+[node name="EnemyAir7" parent="." instance=ExtResource("4_2axqc")]
+position = Vector2(4030, 748)
+rotation = 1.57079
+
+[node name="EnemyAir8" parent="." instance=ExtResource("4_2axqc")]
+position = Vector2(1283, 0)
+
+[node name="EnemyAir9" parent="." instance=ExtResource("4_2axqc")]
+position = Vector2(3608, 1113)
+rotation = 3.14159
+
+[node name="EnemyAir10" parent="." instance=ExtResource("4_2axqc")]
+position = Vector2(3970, 520)
+rotation = 1.0472
+
+[node name="EnemyAir11" parent="." instance=ExtResource("4_2axqc")]
+position = Vector2(3615, 332)
+
+[node name="EnemyAir12" parent="." instance=ExtResource("4_2axqc")]
+position = Vector2(3808, 386)
+rotation = 0.523598
 
 [editable path="Player"]
 [editable path="Player/LifeBarScene"]

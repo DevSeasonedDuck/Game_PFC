@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://nssjcvlran3y"]
 
-[ext_resource type="Script" path="res://GDScenes/weapon_scythe.gd" id="1_n1qhj"]
+[ext_resource type="Script" path="res://GDScripts/weapon_scythe.gd" id="1_eo37v"]
 [ext_resource type="Texture2D" uid="uid://gobjg0a1vham" path="res://Assets/Spritesheets/Player/Attacks/Scythe.png" id="1_wol8y"]
 [ext_resource type="Script" path="res://GDScripts/Hitbox.gd" id="2_jwtgg"]
 
@@ -44,10 +44,10 @@ _data = {
 "slash_round_air": SubResource("Animation_fcabm")
 }
 
-[node name="WeaponScythe" type="Node2D"]
+[node name="WeaponScythe" type="Node2D" groups=["PlayerAttacks"]]
 rotation = -0.46755
 scale = Vector2(2, 2)
-script = ExtResource("1_n1qhj")
+script = ExtResource("1_eo37v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -55,7 +55,9 @@ position = Vector2(5, -21)
 rotation = -0.00147056
 texture = ExtResource("1_wol8y")
 
-[node name="Hitbox" type="Area2D" parent="Sprite2D"]
+[node name="Hitbox" type="Area2D" parent="Sprite2D" groups=["PlayerAttacks"]]
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("2_jwtgg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]

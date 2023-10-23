@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddhbrh45sg158"]
+
+[ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="1_0ubys"]
+[ext_resource type="Script" path="res://GDScripts/enemy_air.gd" id="1_cd8vw"]
+[ext_resource type="Script" path="res://GDScripts/Hitbox.gd" id="3_xq2tr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qmkt"]
+size = Vector2(120, 120)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_23ht1"]
+radius = 40.0
+height = 356.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vl1pc"]
+radius = 62.635
+height = 268.82
+
+[node name="EnemyAir" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_cd8vw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_0ubys")
+
+[node name="Hitbox" type="Area2D" parent="." groups=["EnemiesCollisions"]]
+scale = Vector2(0.5, 0.5)
+collision_layer = 5
+collision_mask = 3
+script = ExtResource("3_xq2tr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_7qmkt")
+
+[node name="DetectionRange" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRange"]
+position = Vector2(0, 217)
+shape = SubResource("CapsuleShape2D_23ht1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DetectionRange"]
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_vl1pc")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="area_entered" from="DetectionRange" to="." method="_on_detection_range_area_entered"]

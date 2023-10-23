@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Game_PFC"
-run/main_scene="res://GDScenes/main.tscn"
-config/features=PackedStringArray("4.0", "Forward Plus")
+run/main_scene="res://GDScenes/TestRoom.tscn"
+config/features=PackedStringArray("4.1", "Forward Plus")
+run/max_fps=60
 config/icon="res://icon.svg"
+run/size/viewport_height=648
 
 [autoload]
 
@@ -21,7 +23,8 @@ InputHelper="*res://addons/input_helper/input_helper.gd"
 
 [display]
 
-window/vsync/vsync_mode=0
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 
@@ -66,19 +69,27 @@ jump={
 }
 shoot={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(117, 11),"global_position":Vector2(121, 54),"factor":1.0,"button_index":1,"pressed":true,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(117, 11),"global_position":Vector2(121, 54),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":5,"axis_value":1.0,"script":null)
 ]
 }
 melee_attack={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(249, 21),"global_position":Vector2(253, 64),"factor":1.0,"button_index":2,"pressed":true,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(249, 21),"global_position":Vector2(253, 64),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
 
 [rendering]
 
-anti_aliasing/quality/msaa_2d=3
+textures/canvas_textures/default_texture_filter=3
+textures/default_filters/anisotropic_filtering_level=0
+textures/default_filters/texture_mipmap_bias=1.0
+textures/decals/filter=0
+textures/light_projectors/filter=0
+anti_aliasing/quality/msaa_2d=1
 anti_aliasing/quality/msaa_3d=3
 anti_aliasing/quality/screen_space_aa=1
+occlusion_culling/use_occlusion_culling=true
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

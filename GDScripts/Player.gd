@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 const NORMAL_SPEED=400.0
 var SPEED = NORMAL_SPEED
 const JUMP_VELOCITY = -450.0
@@ -32,13 +34,15 @@ func _physics_process(delta):
 	var directionH = Input.get_axis("go_left", "go_right")
 	if directionH:
 		velocity.x = directionH * SPEED
+		$PlayerAnim.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		$PlayerAnim.play("walk")
 		
 	
 	# Jump.
 	if Input.is_action_just_pressed("jump") and JUMP_COUNTER>0:
-		if Input.is_action_pressed("sprint"):
+		if Input.is_action_pressed("sprint") and velocity.x!=0:
 			velocity.y = JUMP_VELOCITY*1.15
 		else:
 			velocity.y = JUMP_VELOCITY
@@ -79,7 +83,6 @@ func shoot():
 		_Bullet.global_position=self.position+Vector2(40,0)
 		_Bullet.angle=0.0
 	cooldownBullet.start()
-	$Camera2DPlus.add_shake(1.5) # Adds a little shake when bullet is fired
 	InputHelper.rumble_small()
 
 # Melee attack

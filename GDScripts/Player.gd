@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name Player
 signal healthChanged
 
-const NORMAL_SPEED=400.0
+const NORMAL_SPEED=350.0
 var SPEED = NORMAL_SPEED
 const JUMP_VELOCITY = -450.0
 #Preload for the "Bullet" scene. Required to instance bullets.
@@ -55,7 +55,7 @@ func _physics_process(delta):
 	# Sprint code.
 	# Keep "shift" pressed for sprint. Release for default speed.
 	if Input.is_action_just_pressed("sprint"):
-		SPEED=SPEED+250
+		SPEED=SPEED+200
 	if Input.is_action_just_released("sprint") and SPEED!=NORMAL_SPEED:
 		SPEED=NORMAL_SPEED
 

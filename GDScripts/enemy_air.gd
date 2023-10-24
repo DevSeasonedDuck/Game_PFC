@@ -18,17 +18,17 @@ func _physics_process(_delta):
 			move_and_slide()
 
 
-# Connected signals functions 
 
-#When enemy collides with the player
+# Connected signals functions 
+# When enemy collides with the player
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Player"):
 		queue_free()
-#When enemy colldes with the player weapons
+# When enemy colldes with the player weapons
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("PlayerAttacks"):
 		queue_free()
-#When detects the player presence		
+# When detects the player presence		
 func _on_detection_range_area_entered(area):
 	if area.is_in_group("PlayerArea"):
 		chase=true

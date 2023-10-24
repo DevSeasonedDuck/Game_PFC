@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://qv22byt3piay"]
 
 [ext_resource type="Script" path="res://Fire Bullets/scripts/Bullet.gd" id="1_cr8qy"]
-[ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="2_odc8r"]
+[ext_resource type="Texture2D" uid="uid://clixi8sw7q2bw" path="res://Fire Bullets/assets/bullet.png" id="2_xxrjd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmbgj"]
-size = Vector2(120, 120)
+size = Vector2(100, 60)
 
 [node name="Bullet" type="Area2D" groups=["PlayerAttacks"]]
 light_mask = 3
@@ -15,10 +15,12 @@ collision_mask = 7
 script = ExtResource("1_cr8qy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_odc8r")
+scale = Vector2(5, 5)
+texture = ExtResource("2_xxrjd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.8743e-06, 3.27825e-06)
+position = Vector2(-1.19209e-06, -5.96046e-07)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wmbgj")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

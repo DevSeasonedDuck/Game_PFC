@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr7b7l0ifvum5"]
+
+[ext_resource type="Texture2D" uid="uid://cdtl6ts2pk7o3" path="res://Assets/Spritesheets/Enemies/EnemyTurret.png" id="1_7p5t4"]
+[ext_resource type="Script" path="res://GDScripts/Hitbox.gd" id="2_uf2q6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_au1su"]
+radius = 156.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwu8e"]
+size = Vector2(20, 51)
+
+[node name="EnemyTurret" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7p5t4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_au1su")
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("2_uf2q6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_qwu8e")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://duifroxwmi1r6"]
+
+[ext_resource type="Texture2D" uid="uid://cj3lqaoq64te1" path="res://Assets/Spritesheets/Items/first_aid_kit.png" id="1_7d6jh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87b0m"]
+size = Vector2(22, 10)
+
+[node name="Medkit" type="Area2D" groups=["healthCureItems"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7d6jh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_87b0m")

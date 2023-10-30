@@ -20,7 +20,7 @@ run/size/viewport_height=648
 [autoload]
 
 InputHelper="*res://addons/input_helper/input_helper.gd"
-InteractManager="*res://GDScenes/InteractionManager.tscn"
+InteractManager="*res://GDScenes/InteractManager.tscn"
 
 [display]
 

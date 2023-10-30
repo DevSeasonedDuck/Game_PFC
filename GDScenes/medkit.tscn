@@ -1,8 +1,10 @@
+
 [gd_scene load_steps=6 format=3 uid="uid://duifroxwmi1r6"]
 
 [ext_resource type="Texture2D" uid="uid://cj3lqaoq64te1" path="res://Assets/Spritesheets/Items/first_aid_kit.png" id="1_7d6jh"]
 [ext_resource type="Script" path="res://GDScripts/medkit.gd" id="1_j28pv"]
 [ext_resource type="PackedScene" uid="uid://c83vcdwmdfsh1" path="res://GDScenes/interaction_area.tscn" id="3_rfkar"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87b0m"]
 size = Vector2(22, 10)
@@ -11,7 +13,9 @@ size = Vector2(22, 10)
 size = Vector2(48, 24)
 
 [node name="Medkit" type="Area2D" groups=["healthCureItems"]]
+
 script = ExtResource("1_j28pv")
+
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7d6jh")
@@ -20,9 +24,11 @@ texture = ExtResource("1_7d6jh")
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_87b0m")
 
+
 [node name="InteractionArea" parent="." instance=ExtResource("3_rfkar")]
 action_name = "cure"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_0mm46")
+

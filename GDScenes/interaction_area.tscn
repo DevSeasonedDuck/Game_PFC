@@ -1,11 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://c83vcdwmdfsh1"]
 
-[ext_resource type="Script" path="res://GDScripts/interaction_area.gd" id="1_p3rlm"]
+[ext_resource type="Script" path="res://GDScripts/interaction_area.gd" id="1_6rxhw"]
+
 
 [node name="InteractionArea" type="Area2D"]
 collision_layer = 0
 collision_mask = 5
-script = ExtResource("1_p3rlm")
+
+script = ExtResource("1_6rxhw")
+
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

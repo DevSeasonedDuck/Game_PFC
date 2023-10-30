@@ -103,6 +103,5 @@ func _on_player_area_area_entered(area):
 	if area.is_in_group("EnemiesCollisions"):
 		currentHealth-=10
 		healthChanged.emit()
-		if currentHealth==0:
-			queue_free()
+		if currentHealth<=0:
 			get_tree().reload_current_scene()

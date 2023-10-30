@@ -58,7 +58,6 @@ func _physics_process(delta):
 		SPEED=SPEED+200
 	if Input.is_action_just_released("sprint") and SPEED!=NORMAL_SPEED:
 		SPEED=NORMAL_SPEED
-
 	# Press "S" when on air for fast fall. Increases fall velocity.
 	if Input.is_action_just_pressed("go_down") and not is_on_floor():
 		velocity.y=-(JUMP_VELOCITY*1.75)+(JUMP_VELOCITY/1.5)
@@ -73,7 +72,6 @@ func _physics_process(delta):
 			melee_attack(true)
 		if !is_on_floor():
 			melee_attack(false)
-		
 	move_and_slide()
 	
 # Shooting bullets

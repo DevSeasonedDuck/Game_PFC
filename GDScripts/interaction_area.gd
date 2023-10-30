@@ -7,9 +7,9 @@ var interact: Callable = func():
 	pass
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	InteractManager.register_area(self)
 
 
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	InteractManager.unregister_area(self)

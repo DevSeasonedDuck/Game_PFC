@@ -478,7 +478,10 @@ position = Vector2(3808, 386)
 rotation = 0.523598
 
 [node name="Medkit" parent="." instance=ExtResource("6_qe8xn")]
-position = Vector2(208, 352)
+position = Vector2(1103, 339)
+
+[node name="Medkit2" parent="." instance=ExtResource("6_qe8xn")]
+position = Vector2(328, 657)
 
 [editable path="Player"]
 [editable path="Player/LifeBarScene"]

@@ -106,4 +106,5 @@ func _on_player_area_area_entered(area):
 		currentHealth-=10
 		healthChanged.emit()
 		if currentHealth==0:
+			queue_free()
 			get_tree().reload_current_scene()

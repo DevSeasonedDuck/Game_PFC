@@ -8,6 +8,15 @@
 
 config_version=5
 
+[Game_PFC]
+
+config/achievements/local_source="res://"
+config/achievements/remote_source="https://"
+config/achievements/save_directory="C:/Users/dixeo/AppData/Roaming/Godot/app_userdata/Game_PFC"
+config/achievements/save_file_name="achievements.json"
+config/achievements/password="40jL70bOX3vaGBHifc5rhz9UU"
+config/godotenv/root_directory="res://"
+
 [application]
 
 config/name="Game_PFC"
@@ -21,6 +30,11 @@ run/size/viewport_height=648
 
 InputHelper="*res://addons/input_helper/input_helper.gd"
 InteractManager="*res://GDScenes/InteractManager.tscn"
+GodotEssentialsHelpers="*res://addons/2d_essentials/autoload/helpers.gd"
+GodotEssentialsAudio="*res://addons/2d_essentials/autoload/audio/audio.gd"
+GodotEssentialsSceneTransitioner="*res://addons/2d_essentials/autoload/scene_transitions/scene_transitioner.gd"
+GodotEssentialsAchievements="*res://addons/2d_essentials/autoload/achievements/achievements.tscn"
+GodotEssentialsEnvironment="*res://addons/2d_essentials/autoload/dotenv/godotenv.gd"
 
 [display]
 
@@ -31,7 +45,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/camera_2d_plus/plugin.cfg", "res://addons/input_helper/plugin.cfg")
+enabled=PackedStringArray("res://addons/2d_essentials/plugin.cfg", "res://addons/camera_2d_plus/plugin.cfg", "res://addons/input_helper/plugin.cfg")
 
 [input]
 

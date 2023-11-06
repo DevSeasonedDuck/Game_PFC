@@ -2,7 +2,7 @@ extends StaticBody2D
 
 var is_closed : bool = true
 
-func hideDoor():
+func activate():
 	if is_closed:
 		self.hide()
 		$CollisionShape2D.disabled=true

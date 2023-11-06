@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba8wlar80k6me"]
+
+[ext_resource type="Script" path="res://GDScripts/lever.gd" id="1_aamjc"]
+[ext_resource type="Texture2D" uid="uid://bgvoxvppeirug" path="res://Assets/Spritesheets/Items/Lever.png" id="2_lcgdj"]
+[ext_resource type="PackedScene" uid="uid://c83vcdwmdfsh1" path="res://GDScenes/interaction_area.tscn" id="2_qoni3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alc8q"]
+size = Vector2(50, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vg31l"]
+size = Vector2(49, 61)
+
+[node name="Lever" type="Area2D"]
+script = ExtResource("1_aamjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lcgdj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_alc8q")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_qoni3")]
+action_name = "Activate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_vg31l")

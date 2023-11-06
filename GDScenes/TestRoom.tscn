@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2x2saagsuboq"]
+[gd_scene load_steps=14 format=3 uid="uid://b2x2saagsuboq"]
 
 [ext_resource type="PackedScene" uid="uid://d6akd4ygw8k4" path="res://GDScenes/player.tscn" id="1_44lqo"]
 [ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="2_moo7r"]
 [ext_resource type="Texture2D" uid="uid://ddfr0hdmfs71r" path="res://Assets/Spritesheets/Enviroment/EnviromentTestSprites.png" id="3_hi7l7"]
 [ext_resource type="PackedScene" uid="uid://ddhbrh45sg158" path="res://GDScenes/enemy_air.tscn" id="4_2axqc"]
 [ext_resource type="Script" path="res://addons/camera_2d_plus/objects/camera_2d_plus/camera_2d_plus_script.gd" id="5_fsy0v"]
+[ext_resource type="PackedScene" uid="uid://ba8wlar80k6me" path="res://GDScenes/lever.tscn" id="5_qcygc"]
 [ext_resource type="PackedScene" uid="uid://duifroxwmi1r6" path="res://GDScenes/medkit.tscn" id="6_qe8xn"]
+[ext_resource type="PackedScene" uid="uid://60s6cq6ck2i" path="res://GDScenes/door.tscn" id="7_peagk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m1myy"]
 
@@ -482,6 +484,18 @@ position = Vector2(1103, 339)
 
 [node name="Medkit2" parent="." instance=ExtResource("6_qe8xn")]
 position = Vector2(328, 657)
+
+[node name="Lever" parent="." instance=ExtResource("5_qcygc")]
+position = Vector2(904, 334)
+
+[node name="Door" parent="Lever" instance=ExtResource("7_peagk")]
+position = Vector2(210, 474)
+
+[node name="Lever2" parent="." instance=ExtResource("5_qcygc")]
+position = Vector2(642, 332)
+
+[node name="Door" parent="Lever2" instance=ExtResource("7_peagk")]
+position = Vector2(210, 474)
 
 [editable path="Player"]
 [editable path="Player/LifeBarScene"]

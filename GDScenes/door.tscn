@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://60s6cq6ck2i"]
+
+[ext_resource type="Texture2D" uid="uid://d0fsahe3bjcoj" path="res://Assets/Spritesheets/Items/Door.png" id="1_4kiai"]
+[ext_resource type="Script" path="res://GDScripts/door.gd" id="1_g4md8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnt13"]
+size = Vector2(23.25, 46)
+
+[node name="Door" type="StaticBody2D" groups=["LevelingDoor"]]
+scale = Vector2(3, 3)
+collision_mask = 5
+script = ExtResource("1_g4md8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4kiai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.875, 4.5)
+shape = SubResource("RectangleShape2D_xnt13")

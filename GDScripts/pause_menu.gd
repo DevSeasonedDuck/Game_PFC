@@ -5,10 +5,11 @@ extends Control
 func _ready():
 	hide()
 	game_manager.connect("toggle_game_paused", _on_game_manager_toggle_game_paused)
-	
+
 func _on_game_manager_toggle_game_paused(is_paused : bool):
 	if is_paused:
 		show()
+		$Panel/VBoxContainer/ResumeButton.grab_focus()
 	else:
 		hide()
 

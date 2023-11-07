@@ -1,4 +1,5 @@
 extends Button
 
 func _ready():
-	self.grab_focus()
+	grab_focus()
+

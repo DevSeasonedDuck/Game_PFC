@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2lfn4xh3bj5n"]
+
+[ext_resource type="PackedScene" uid="uid://b2x2saagsuboq" path="res://GDScenes/TestRoom.tscn" id="1_rw5fm"]
+[ext_resource type="Script" path="res://GDScripts/game.gd" id="1_xfai6"]
+[ext_resource type="PackedScene" uid="uid://t1ct4iffghm0" path="res://GDScenes/pause_menu.tscn" id="2_ny07w"]
+
+[node name="GameManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_xfai6")
+
+[node name="TestRoom" parent="." instance=ExtResource("1_rw5fm")]
+script = null
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="PauseLayer" node_paths=PackedStringArray("game_manager") instance=ExtResource("2_ny07w")]
+game_manager = NodePath("../..")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2x2saagsuboq"]
+[gd_scene load_steps=15 format=3 uid="uid://b2x2saagsuboq"]
 
 [ext_resource type="PackedScene" uid="uid://d6akd4ygw8k4" path="res://GDScenes/player.tscn" id="1_44lqo"]
 [ext_resource type="Texture2D" uid="uid://d0w8rj45pbrgd" path="res://icon.svg" id="2_moo7r"]
@@ -9,12 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://duifroxwmi1r6" path="res://GDScenes/medkit.tscn" id="6_qe8xn"]
 [ext_resource type="PackedScene" uid="uid://60s6cq6ck2i" path="res://GDScenes/door.tscn" id="7_peagk"]
 [ext_resource type="PackedScene" uid="uid://ypn2dfoshxdg" path="res://GDScenes/moving_platform.tscn" id="9_o85y5"]
-
-[sub_resource type="GDScript" id="GDScript_ysmjy"]
-script/source = "extends Node2D
-
-
-"
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m1myy"]
 
@@ -414,7 +408,6 @@ sources/2 = SubResource("TileSetAtlasSource_c2wvp")
 
 [node name="TestRoom" type="Node2D"]
 process_mode = 1
-script = SubResource("GDScript_ysmjy")
 
 [node name="Player" parent="." instance=ExtResource("1_44lqo")]
 position = Vector2(273, 341)

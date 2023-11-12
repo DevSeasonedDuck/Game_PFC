@@ -5,7 +5,7 @@ Proyecto realizado con fines académicos.
 ## Arrancar el proyecto
 1. Descargue el proyecto.
 2. Descargue e instale Godot Engine 4.
-3. En la pantalla de inicio de Godot Engine: Importar >navegar hasta carpeta de proyecto> abrir-
+3. En la pantalla de inicio de Godot Engine: Importar >navegar hasta carpeta de proyecto> abrir
 
 ## Arrancar aplicación
 En los archivos del proyecto encontraá el ejecutable de nombre "Game_PFC". Basta con iniciarlo para correr el juego en su versión ejecutable.

@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbx01dmt1o88m"]
+[gd_scene load_steps=2 format=3 uid="uid://bbx01dmt1o88m"]
 
 [ext_resource type="Script" path="res://GDScripts/main_menu.gd" id="1_pk8tt"]
-[ext_resource type="Script" path="res://GDScripts/button.gd" id="2_i8l1h"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -28,7 +27,6 @@ grow_vertical = 0
 layout_mode = 2
 text = "Start
 "
-script = ExtResource("2_i8l1h")
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2

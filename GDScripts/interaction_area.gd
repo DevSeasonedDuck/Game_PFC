@@ -1,6 +1,8 @@
 extends Area2D
 class_name InteractionArea
 
+# Area2D built to assign to an interactable object.
+
 @export var action_name : String = "interact"
 
 var interact: Callable = func():

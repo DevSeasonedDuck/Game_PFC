@@ -41,7 +41,8 @@ func on_screen_exited():
 func _on_body_entered(_body):
 	queue_free()
 
-
+# Erase Bullet when collides with an enemy.
+# Certain enemies could be 2D Areas instead of bodies. This function prevents errors with this type of enemy.
 func _on_area_entered(area):
 	if area.is_in_group("EnemiesCollisions"):
 		queue_free()

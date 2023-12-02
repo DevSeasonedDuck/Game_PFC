@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+# A door that can be opened or closed by using a lever
+
 var is_closed : bool = true
 
 func activate():

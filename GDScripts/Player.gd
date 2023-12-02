@@ -101,7 +101,6 @@ func _on_cooldown_scythe_timeout():
 
 func _on_player_area_area_entered(area):
 	var areaName=area.get_name()
-	print (areaName)
 	if area.is_in_group("EnemiesCollisions"):
 		currentHealth-=10
 		healthChanged.emit()

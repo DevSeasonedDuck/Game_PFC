@@ -21,9 +21,10 @@ config/godotenv/root_directory="res://"
 
 config/name="Game_PFC"
 run/main_scene="res://GDScenes/main_menu.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 run/max_fps=60
-config/icon="res://icon.svg"
+config/icon="res://Assets/art_images/3 - pixel art vampire with scythe.png"
+config/windows_native_icon="res://Assets/art_images/3 - pixel art vampire with scythe.png"
 run/size/viewport_height=648
 
 [autoload]
@@ -37,6 +38,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
+window/per_pixel_transparency/allowed=true
 
 [editor_plugins]
 
@@ -127,16 +129,23 @@ pause={
 ]
 }
 
+[physics]
+
+2d/run_on_separate_thread=true
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 textures/canvas_textures/default_texture_repeat=1
+textures/lossless_compression/force_png=true
+global_illumination/voxel_gi/quality=1
 textures/default_filters/anisotropic_filtering_level=0
 textures/default_filters/texture_mipmap_bias=1.0
 textures/decals/filter=0
 textures/light_projectors/filter=0
 anti_aliasing/quality/msaa_2d=1
 anti_aliasing/quality/msaa_3d=3
+viewport/hdr_2d=true
 anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true
 2d/snap/snap_2d_transforms_to_pixel=true

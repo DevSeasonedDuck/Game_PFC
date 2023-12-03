@@ -23,13 +23,13 @@ En los archivos del proyecto encontrá el ejecutable de nombre "VampireStrike.ex
 6. Para ataque con guadaña pulse Click DRCH (Diferente en tierra y en aire)
 7. Para pausar el juego ESC
 ### Para mando (Xbox)
-1. Movimiento con D-pad o Joystick <br>
-7. Para esprintar (mantener) <br>
-A. Saltar <br>
-B. Para interactuar <br>
-9. Disparar<br>
-X. Ataque con guadaña(Diferente en tierra y en aire) <br>
-6. Para pausar botón Menú
+1 Movimiento con D-pad o Joystick <br>
+7 Para esprintar (mantener) <br>
+A Saltar <br>
+B Para interactuar <br>
+9 Disparar<br>
+X Ataque con guadaña(Diferente en tierra y en aire) <br>
+6 Pausar
 
 ![image](https://github.com/diegoCarcamoGutierrez/Game_PFC/assets/113419882/91736f7c-a0c3-455b-934a-9d22011ab875)
 

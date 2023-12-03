@@ -28,6 +28,9 @@ En los archivos del proyecto encontraá el ejecutable de nombre "Game_PFC". Bast
 6. Para ataque con guadaña pulse X (Diferente en tierra y en aire)
 7. Para pausar botón Menú
 
+![image](https://github.com/diegoCarcamoGutierrez/Game_PFC/assets/113419882/91736f7c-a0c3-455b-934a-9d22011ab875)
+
+
 ##
 #### Avisos
 Por defecto el nivel al que se manda al jugador desde la pantalla inicial es una sala de pruebas. Para probar otros niveles en desarrollo inícielos desde el proyecto en Godot Engine

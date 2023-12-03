@@ -28,7 +28,7 @@ En los archivos del proyecto encontrá el ejecutable de nombre "VampireStrike.ex
 A Saltar <br>
 B Para interactuar <br>
 9 Disparar<br>
-X Ataque con guadaña(Diferente en tierra y en aire) <br>
+X Ataque con guadaña (Diferente en tierra y en aire) <br>
 6 Pausar
 
 ![image](https://github.com/diegoCarcamoGutierrez/Game_PFC/assets/113419882/91736f7c-a0c3-455b-934a-9d22011ab875)

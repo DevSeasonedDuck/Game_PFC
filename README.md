@@ -21,12 +21,12 @@ En los archivos del proyecto encontraá el ejecutable de nombre "Game_PFC". Bast
 7. Para pausar el juego ESC
 ### Para mando (Xbox)
 1. Movimiento con D-pad o Joystick
-2. Para esprintar mantenga RB
-3. Para saltar botón A
-4. Para interactuar botón B
+7. Para esprintar (mantener)
+A. Saltar
+B. Para interactuar
 5. Para disparar pulse o mantenga pulsado RT
-6. Para ataque con guadaña pulse X (Diferente en tierra y en aire)
-7. Para pausar botón Menú
+X. Ataque con guadaña(Diferente en tierra y en aire)
+6. Para pausar botón Menú
 
 ![image](https://github.com/diegoCarcamoGutierrez/Game_PFC/assets/113419882/91736f7c-a0c3-455b-934a-9d22011ab875)
 
